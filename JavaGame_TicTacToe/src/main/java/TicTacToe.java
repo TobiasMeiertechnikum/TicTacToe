@@ -16,7 +16,7 @@ public class TicTacToe {
     }
 
     private boolean hasWinner(){
-
+        return true;
     }
 
 }

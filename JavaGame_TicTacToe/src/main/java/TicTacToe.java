@@ -64,7 +64,28 @@ public class TicTacToe {
         }
     }
     private boolean hasWinner(){
-        return true;
+        char m = currentPlayer.getMarker();
+
+        for (int i = 0; i < 3; i++) {
+            if (board.getCell(i, 0) == m && board.getCell(i, 1) == m && board.getCell(i, 2) == m) {
+                return true;
+            }
+        }
+
+        for (int j = 0; j < 3; j++) {
+            if (board.getCell(0, j) == m && board.getCell(1, j) == m && board.getCell(2, j) == m) {
+                return true;
+            }
+        }
+
+        if (board.getCell(0, 0) == m && board.getCell(1, 1) == m && board.getCell(2, 2) == m) {
+            return true;
+        }
+        if (board.getCell(0, 2) == m && board.getCell(1, 1) == m && board.getCell(2, 0) == m) {
+            return true;
+        }
+
+        return false;
     }
 
 }

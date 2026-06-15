@@ -15,6 +15,8 @@ public class TicTacToe {
 
     public void start(){
         Scanner scanner = new Scanner(System.in);
+
+        while (true) {
             board.clear();
             currentPlayer = player1;
             board.print();
@@ -51,9 +53,16 @@ public class TicTacToe {
 
                 switchCurrentPlayer();
             }
-        System.out.println("Spiel beendet. Auf Wiedersehen!");
+
+            System.out.println("Neues Spiel? (j/n)");
+            String answer = scanner.next();
+            if (!answer.equalsIgnoreCase("j")) {
+                System.out.println("Spiel beendet. Auf Wiedersehen!");
+                break;
+            }
+        }
+
         scanner.close();
-        return;
     }
 
     private void switchCurrentPlayer(){
@@ -63,6 +72,7 @@ public class TicTacToe {
             currentPlayer = player1;
         }
     }
+
     private boolean hasWinner(){
         char m = currentPlayer.getMarker();
 

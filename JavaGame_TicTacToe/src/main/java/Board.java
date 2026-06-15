@@ -1,3 +1,4 @@
+package main.java;
 public class Board{
     private char[][] cells;
 
